@@ -6,10 +6,14 @@
     <title>Apps</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap">
     <link rel="stylesheet" href="style.css">
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script type="text/javascript" id="MathJax-script" async
+            src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+    </script>
 </head>
 <body>
     <header>
-        <h2>Ophélie Renaud</h2>
+        <h2>Apps</h2>
     </header>
     <nav>
         <ul>
@@ -30,11 +34,11 @@
     <ul>
         <li>
             The first filter is the Standard Deviation (STD) filter. See <a href="https://en.wikipedia.org/wiki/Standard_deviation" target="_blank">Wiki STD deviation</a>.
-            <p>$$ {\displaystyle MAD = median (|X_{i}-{\tilde {X}}|)} $$</p>
+            <p>\[ \sigma = \sqrt{\frac{1}{N} \sum\limits_{i=1}^N (x_i - \mu)} \]</p>
         </li>
         <li>
             The second filter is the Median Average Deviation (MAD) filter. See <a href="https://en.wikipedia.org/wiki/Median_absolute_deviation" target="_blank">Wiki MAD deviation</a>.
-            <p>$$ \sigma =\sqrt{\frac{1}{N}\sum\limits_{i=1}^N (x_i - \mu)}$$</p>
+            <p>\[ {\displaystyle MAD = \mathrm{median} (|X_{i}-{\tilde {X}}|)} \]</p>
         </li>
     </ul>
     <p>Both filters aim to find a threshold and remove data points above this threshold.</p>

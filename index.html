@@ -6,20 +6,22 @@
     <title>Home page</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap">
     <link rel="stylesheet" href="style.css">
+        <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            fetch('nav.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.querySelector('nav').innerHTML = data;
+                });
+        });
+    </script>
 </head>
 <body>
     <header>
         <h2>Ophélie Renaud</h2>
     </header>
     <nav>
-        <ul>
-            <li><a href="index.html">Home page</a></li>
-            <li><a href="publis.html">Publication</a></li>
-            <li><a href="talk.html">Talks</a></li>
-            <li><a href="tutos.html">Tutorial</a></li>
-            <li><a href="app.html">Application</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
+
     </nav>
     <div class="container">
         <section class="photo-container">

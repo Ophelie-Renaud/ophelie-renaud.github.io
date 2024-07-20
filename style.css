@@ -104,3 +104,27 @@ nav ul li a {
     margin: 0 auto; /* Centre l'image si le conteneur est plus grand */
     display: block; /* Pour s'assurer que l'image se centre avec margin: auto */
 }
+
+.research-partners {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.research-partners th,
+.research-partners td {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+.research-partners th {
+    background-color: #f2f2f2;
+}
+
+.partner-image {
+    width: 100px; /* Vous pouvez ajuster cette taille selon vos besoins */
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}

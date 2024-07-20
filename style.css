@@ -111,20 +111,17 @@ nav ul li a {
     margin-top: 20px;
 }
 
-.research-partners th,
 .research-partners td {
     border: 1px solid #dddddd;
-    text-align: left;
-    padding: 8px;
-}
-
-.research-partners th {
-    background-color: #f2f2f2;
+    text-align: center;
+    padding: 10px;
+    vertical-align: top;
 }
 
 .partner-image {
-    width: 100px; /* Vous pouvez ajuster cette taille selon vos besoins */
+    width: 100px; /* Ajustez cette taille selon vos besoins */
     height: auto;
     display: block;
     margin: 0 auto;
 }
+

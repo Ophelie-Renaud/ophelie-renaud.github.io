@@ -109,8 +109,9 @@ nav ul li a {
     justify-content: center;
 }
 .research-partners {
-    width: 100%;
+    width: 90%;
     border-collapse: collapse;
+    table-layout: fixed;
     margin-top: 20px;
 }
 

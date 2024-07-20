@@ -97,3 +97,8 @@ nav ul li a {
             height: 100%;
             object-fit: cover;
         }
+.responsive-image {
+    width: 100%;
+    height: auto;
+    max-width: 100%; /* Pour éviter que l'image dépasse la taille de son conteneur */
+}

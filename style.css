@@ -131,7 +131,7 @@ nav ul li a {
     max-width: 150px; /* Limite supérieure pour éviter que les images deviennent trop grandes */
 }
 .tuto {
-    width: 90%;
+    width: 100%;
     border-collapse: collapse;
     table-layout: fixed;
     margin-top: 20px;

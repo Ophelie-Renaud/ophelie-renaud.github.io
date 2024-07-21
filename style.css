@@ -130,4 +130,18 @@ nav ul li a {
     margin: 0 auto;
     max-width: 150px; /* Limite supérieure pour éviter que les images deviennent trop grandes */
 }
+.tuto {
+    width: 90%;
+    border-collapse: collapse;
+    table-layout: fixed;
+    margin-top: 20px;
+}
+
+.tuto td {
+    border: 1px solid #dddddd;
+    text-align: center;
+    padding: 10px;
+    vertical-align: top;
+    width: 45%;
+}
 

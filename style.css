@@ -81,8 +81,11 @@ nav ul li a {
 
         .video-container {
             position: relative;
-            width: 640px;
-            height: 480px;
+width: 100%; /* Utilise toute la largeur disponible */
+        padding-top: 56.25%; /* 16:9 Aspect Ratio */
+        overflow: hidden;
+           /* width: 640px;
+            height: 480px;*/
         }
         .video-container img {
             width: 100%;

@@ -161,3 +161,78 @@ nav ul li a {
     height: 100%;
     border: 0;
 }
+/* Adaptation pour tablettes et écrans plus petits (moins de 768px) */
+@media (max-width: 768px) {
+    .container {
+        width: 90%; /* Réduit la largeur pour mieux s'adapter aux écrans plus petits */
+        padding: 15px;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+
+    p, .publication li, nav ul li a {
+        font-size: 18px;
+    }
+
+    .video-container {
+        width: 100%; /* Utilise toute la largeur de l'écran */
+        height: auto; /* Ajuste la hauteur pour conserver le ratio */
+    }
+
+    .partner-image {
+        width: 80px; /* Diminue la taille des images pour s’adapter aux petits écrans */
+    }
+
+    .research-partners, .tuto {
+        width: 100%; /* Utilise toute la largeur disponible */
+    }
+
+    nav ul li {
+        display: block; /* Aligne les éléments de navigation verticalement */
+        margin-bottom: 5px;
+    }
+}
+
+/* Adaptation pour petits écrans mobiles (moins de 480px) */
+@media (max-width: 480px) {
+    h2 {
+        font-size: 20px;
+    }
+
+    p, .publication li, nav ul li a {
+        font-size: 16px;
+    }
+
+    .container {
+        width: 95%; /* Réduit la marge latérale pour utiliser plus d'espace */
+        padding: 10px;
+    }
+
+    .video-container {
+        width: 100%;
+        height: auto;
+    }
+
+    .research-partners td, .tuto td {
+        width: 100%; /* Chaque cellule prend toute la largeur pour être mieux lisible */
+    }
+
+    .slideshow-container {
+        max-width: 100%;
+        padding-top: 75%; /* Ajuste le ratio pour les écrans mobiles plus petits */
+    }
+
+    nav ul {
+        padding: 0;
+    }
+
+    nav ul li {
+        margin-right: 0; /* Supprime les marges pour aligner les éléments */
+    }
+
+    .partner-image {
+        width: 60px; /* Encore plus petit pour les écrans les plus petits */
+    }
+}

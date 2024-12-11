@@ -13,6 +13,17 @@
                 .then(data => {
                     document.querySelector('nav').innerHTML = data;
                 });
+document.querySelectorAll('.copy-bibtex').forEach(button => {
+                button.addEventListener('click', function() {
+                    const bibtex = this.previousElementSibling.textContent;
+                    navigator.clipboard.writeText(bibtex).then(() => {
+                        alert("BibTeX copié dans le presse-papier !");
+                    }).catch(err => {
+                        console.error('Erreur lors de la copie : ', err);
+                    });
+                });
+            });
+            
         });
     </script>
 </head>
@@ -31,6 +42,8 @@
                    <p> 
 <b> Ophélie Renaud</b>, Adrien Gougeon, Karol Desnos, Chris Phillips, John Tuthill, Martin Quinson, and Jean-François Nezan,« <a href="https://notyet"> SimSDP: Dataflow Application Distribution on Heterogeneous Multi-Node & Multi-Core Architectures </a>», in: to be published.
 </p>
+                    <pre class="bibtex" style="display:none;">@article{SimSDP2024, author = {Ophélie Renaud, Adrien Gougeon, Karol Desnos, ...}, title = {SimSDP: Dataflow Application Distribution ...}, year = {2024} }</pre>
+                    <button class="copy-bibtex">Copier BibTeX</button>
                 </li>
                 <li>
                   <p> 

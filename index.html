@@ -36,6 +36,18 @@
         .photo-container:hover img {
             transform: scale(1.2); /* Zoom sur l'image */
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); /* Ombre portée */
+
+            .responsive-image {
+            width: 100%;  /* Assure que l'image prenne toute la largeur de son conteneur */
+            height: auto; /* Conserve les proportions de l'image */
+            object-fit: cover; /* Couvre tout l'espace disponible dans le conteneur */
+            transition: transform 0.5s ease, box-shadow 0.3s ease;
+        }
+
+        .responsive-image:hover {
+            transform: scale(1.2); /* Zoom sur l'image */
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); /* Ombre portée */
+        }
         }
     </style>
 </head>

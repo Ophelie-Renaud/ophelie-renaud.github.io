@@ -16,6 +16,40 @@
                 });
         });
     </script>
+            <style>
+        /* CSS pour l'effet de survol de l'image */
+        .photo-container {
+            display: inline-block;
+            overflow: hidden; /* Masque la partie de l'image qui dépasse */
+            position: relative;
+            width: 300px; /* Largeur fixée pour l'image */
+            height: 300px; /* Hauteur fixée pour l'image */
+        }
+
+        .photo-container img {
+            transition: transform 0.5s ease, box-shadow 0.3s ease;
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Permet à l'image de remplir le conteneur tout en conservant son ratio */
+        }
+
+        .photo-container:hover img {
+            transform: scale(1.2); /* Zoom sur l'image */
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); /* Ombre portée */
+
+            .responsive-image {
+            width: 100%;  /* Assure que l'image prenne toute la largeur de son conteneur */
+            height: auto; /* Conserve les proportions de l'image */
+            object-fit: cover; /* Couvre tout l'espace disponible dans le conteneur */
+            transition: transform 0.5s ease, box-shadow 0.3s ease;
+        }
+
+        .responsive-image:hover {
+            transform: scale(1.2); /* Zoom sur l'image */
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); /* Ombre portée */
+        }
+        }
+    </style>
 </head>
 <body>
     <header>

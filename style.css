@@ -203,7 +203,7 @@ width: 100%; /* Utilise toute la largeur disponible */
 }
 
 .research-partners td {
-    border: 1px solid #dddddd;
+    border: 1px solid transparent;
     text-align: center;
     padding: 10px;
     vertical-align: top;

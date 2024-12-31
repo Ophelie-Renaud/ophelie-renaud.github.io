@@ -29,6 +29,54 @@ p {
     padding: 20px;
 }
 
+ details {
+            margin-bottom: 1.5rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+        }
+        summary {
+            background-color: #4CAF50;
+            color: white;
+            font-weight: bold;
+            padding: 0.8rem 1rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        summary:hover {
+            background-color: #45a049;
+        }
+        summary::marker {
+            content: "";
+        }
+        summary::after {
+            content: "➕";
+            font-size: 1.2rem;
+            margin-left: 0.5rem;
+            transition: transform 0.3s ease;
+        }
+        details[open] summary::after {
+            content: "➖";
+            transform: rotate(180deg);
+        }
+        details div, details ul {
+            padding: 1rem;
+            background: #f9f9f9;
+        }
+        .video-container {
+            margin-top: 1rem;
+            text-align: center;
+        }
+        .video-container iframe, .video-container video {
+            width: 100%;
+            max-width: 100%;
+            border: none;
+            border-radius: 5px;
+        }
+
 header {
     background: #333;
     color: #fff;

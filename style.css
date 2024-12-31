@@ -66,6 +66,13 @@ p {
             padding: 1rem;
             background: #f9f9f9;
         }
+details p {
+    padding: 1rem; /* Ajout d'espace autour du texte */
+    margin: 0; /* Suppression des marges inutiles */
+    font-size: 1rem;
+    line-height: 1.5;
+    background-color: #f9f9f9; /* Fond clair */
+}
         .video-container {
             margin-top: 1rem;
             text-align: center;

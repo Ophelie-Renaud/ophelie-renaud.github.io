@@ -149,12 +149,15 @@
                                 
                                  <p> Full tutorial <a href="https://github.com/Ophelie-Renaud/ddfacet-dft-fft-g2g-tutorials/blob/main/DDFacet_tuto.md">here</a> </p>
                                 <div class="slideshow-container">
-                                    <iframe 
-                                        src="https://hackmd.io/l8fw0PYRQv6dm9i6KpZWPA?view" 
-                                        width="800" 
-                                        height="600" 
-                                        style="border: 1px solid black;">
-                                    </iframe>            
+<div id="ddfacet-tuto"></div>
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<script>
+  fetch("https://cdn.jsdelivr.net/gh/Ophelie-Renaud/ddfacet-dft-fft-g2g-tutorials@main/DDFacet_tuto.md")
+    .then(response => response.text())
+    .then(markdown => {
+      document.getElementById("ddfacet-tuto").innerHTML = marked.parse(markdown);
+    });
+</script>            
                                 </div>
                             </td>
                         </tr>

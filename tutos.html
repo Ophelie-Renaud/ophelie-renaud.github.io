@@ -7,48 +7,47 @@
     <link rel="icon" type="image/png" href="video/webb.png">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap">
     <link rel="stylesheet" href="style.css">
-    <!-- Inclure une copie locale de marked.js -->
-    <script src="marked.min.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", function() {
-            // Contenu Markdown statique pour tester
-            const markdownContent = "# Titre de Test\n\nCeci est un paragraphe de test en **Markdown**.";
-            document.getElementById("ddfacet-tuto").innerHTML = marked.parse(markdownContent);
-            document.getElementById("gip-tuto").innerHTML = marked.parse(markdownContent);
+            fetch('nav.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.querySelector('nav').innerHTML = data;
+                });
         });
     </script>
-    <style>
+            <style>
         /* CSS pour l'effet de survol de l'image */
         .photo-container {
             display: inline-block;
-            overflow: hidden;
+            overflow: hidden; /* Masque la partie de l'image qui dépasse */
             position: relative;
-            width: 300px;
-            height: 300px;
+            width: 300px; /* Largeur fixée pour l'image */
+            height: 300px; /* Hauteur fixée pour l'image */
         }
 
         .photo-container img {
             transition: transform 0.5s ease, box-shadow 0.3s ease;
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            object-fit: cover; /* Permet à l'image de remplir le conteneur tout en conservant son ratio */
         }
 
         .photo-container:hover img {
-            transform: scale(1.2);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-        }
+            transform: scale(1.2); /* Zoom sur l'image */
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); /* Ombre portée */
 
-        .responsive-image {
-            width: 100%;
-            height: auto;
-            object-fit: cover;
+            .responsive-image {
+            width: 100%;  /* Assure que l'image prenne toute la largeur de son conteneur */
+            height: auto; /* Conserve les proportions de l'image */
+            object-fit: cover; /* Couvre tout l'espace disponible dans le conteneur */
             transition: transform 0.5s ease, box-shadow 0.3s ease;
         }
 
         .responsive-image:hover {
-            transform: scale(1.2);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            transform: scale(1.2); /* Zoom sur l'image */
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); /* Ombre portée */
+        }
         }
     </style>
 </head>
@@ -62,8 +61,81 @@
     <div class="container">
         <section class="content">
             <h2>PREESM tutorial</h2>
-            <!-- Autres sections de tutoriels -->
+            <details>
+                <summary><h1>SCAPE: Granularity optimization</h1></summary>
+                <p>
+                SCAPE is a resource allocation optimization method based on dataflow clustering to automatically adjust the granularity of an application on Multicore CPU system.             
+                </p>
+                <div class="table-container">
+                    <table class="research-partners">
+                        <tr>
+                            <td>
+                                <img src="video/scape.png" alt="scape" class="responsive-image">
+                                <p> Full tutorial <a href="https://preesm.github.io/tutos/scape/">here</a> </p>
+                                <div class="slideshow-container">
+                                    <iframe 
+                                            src="https://preesm.github.io/tutos/scape/" 
+                                            width="800" 
+                                            height="600" 
+                                            style="border: 1px solid black;">
+                                        </iframe>            
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </details>
 
+            <details>
+                <summary><h1>SimSDP: Multinode Design Space Exploration</h1></summary>
+                <p>
+                SimSDP is both Multinode & CPU Multicore resource allocation method first and a Topological network, Multinode & CPU Multicore co-design method whose implementation is integrated into PREESM.The methods have been developed to provide application performance analysis for the SKA radio telescope for deployment on HPC systems, but the method is applicable to any dataflow application. 
+                </p>
+                <div class="table-container">
+                    <table class="research-partners">
+                        <tr>
+                            <td>
+                                <img src="video/scape.png" alt="scape" class="responsive-image">
+                                <p> Full tutorial <a href="https://preesm.github.io/tutos/simsdp/">here</a> </p>
+                                <div class="slideshow-container">
+                                    <iframe 
+                                            src="https://preesm.github.io/tutos/simsdp/" 
+                                            width="800" 
+                                            height="600" 
+                                            style="border: 1px solid black;">
+                                        </iframe>            
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </details>
+
+            <details>
+                <summary><h1>CPU-GPU Design Space Exploration</h1></summary>
+                <p>
+                A resource allocation method for heterogeneous systems Multicore CPU accelerated by GPUs (CUDA) is implemented in PREESM to provide comprehensive rapid prototyping.
+                </p>
+                <div class="table-container">
+                    <table class="research-partners">
+                        <tr>
+                            <td>
+                                <img src="video/cpugpu.png" alt="cpugpu" class="responsive-image">
+                                 <p> Full tutorial <a href="https://preesm.github.io/tutos/gpu/">here</a> </p>
+                                <div class="slideshow-container">
+                                    <iframe 
+                                        src="https://preesm.github.io/tutos/gpu/" 
+                                        width="800" 
+                                        height="600" 
+                                        style="border: 1px solid black;">
+                                    </iframe>            
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </details>
+            
              <h2>Radio-interferometry imaging tutorial</h2>
                         <details>
                 <summary><h1>DDFacet for beginner</h1></summary>
@@ -74,9 +146,18 @@
                     <table class="research-partners">
                         <tr>
                             <td>
+                                
                                  <p> Full tutorial <a href="https://github.com/Ophelie-Renaud/ddfacet-dft-fft-g2g-tutorials/blob/main/DDFacet_tuto.md">here</a> </p>
                                 <div class="slideshow-container">
-                                    <div id="ddfacet-tuto"></div>
+<div id="ddfacet-tuto"></div>
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<script>
+  fetch("https://cdn.jsdelivr.net/gh/Ophelie-Renaud/ddfacet-dft-fft-g2g-tutorials@main/DDFacet_tuto.md")
+    .then(response => response.text())
+    .then(markdown => {
+      document.getElementById("ddfacet-tuto").innerHTML = marked.parse(markdown);
+    });
+</script>            
                                 </div>
                             </td>
                         </tr>
@@ -92,9 +173,15 @@
                     <table class="research-partners">
                         <tr>
                             <td>
+                                
                                  <p> Full tutorial <a href="https://github.com/Ophelie-Renaud/ddfacet-dft-fft-g2g-tutorials/blob/main/GIP_tuto.md">here</a> </p>
                                 <div class="slideshow-container">
-                                    <div id="gip-tuto"></div>
+                                    <iframe 
+                                        src="https://hackmd.io/axZjfrMBQ8akKgu-dj-bhQ?view" 
+                                        width="800" 
+                                        height="600" 
+                                        style="border: 1px solid black;">
+                                    </iframe>            
                                 </div>
                             </td>
                         </tr>
@@ -104,4 +191,4 @@
         </section>
     </div>
 </body>
-</html>
+</html>  

@@ -10,33 +10,10 @@
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", function() {
-            fetch('nav.html')
-                .then(response => response.text())
-                .then(data => {
-                    document.querySelector('nav').innerHTML = data;
-                });
-
-            // Charger le contenu Markdown pour DDFacet
-            fetch("https://cdn.jsdelivr.net/gh/Ophelie-Renaud/ddfacet-dft-fft-g2g-tutorials@main/DDFacet_tuto.md")
-                .then(response => response.text())
-                .then(markdown => {
-                    document.getElementById("ddfacet-tuto").innerHTML = marked.parse(markdown);
-                })
-                .catch(error => {
-                    console.error('Error loading DDFacet tutorial:', error);
-                    document.getElementById("ddfacet-tuto").innerHTML = "<p>Failed to load tutorial content.</p>";
-                });
-
-            // Charger le contenu Markdown pour DFT/FFT/G2G
-            fetch("https://cdn.jsdelivr.net/gh/Ophelie-Renaud/ddfacet-dft-fft-g2g-tutorials@main/GIP_tuto.md")
-                .then(response => response.text())
-                .then(markdown => {
-                    document.getElementById("gip-tuto").innerHTML = marked.parse(markdown);
-                })
-                .catch(error => {
-                    console.error('Error loading GIP tutorial:', error);
-                    document.getElementById("gip-tuto").innerHTML = "<p>Failed to load tutorial content.</p>";
-                });
+            // Contenu Markdown statique pour tester
+            const markdownContent = "# Titre de Test\n\nCeci est un paragraphe de test en **Markdown**.";
+            document.getElementById("ddfacet-tuto").innerHTML = marked.parse(markdownContent);
+            document.getElementById("gip-tuto").innerHTML = marked.parse(markdownContent);
         });
     </script>
     <style>
@@ -84,80 +61,7 @@
     <div class="container">
         <section class="content">
             <h2>PREESM tutorial</h2>
-            <details>
-                <summary><h1>SCAPE: Granularity optimization</h1></summary>
-                <p>
-                SCAPE is a resource allocation optimization method based on dataflow clustering to automatically adjust the granularity of an application on Multicore CPU system.
-                </p>
-                <div class="table-container">
-                    <table class="research-partners">
-                        <tr>
-                            <td>
-                                <img src="video/scape.png" alt="scape" class="responsive-image">
-                                <p> Full tutorial <a href="https://preesm.github.io/tutos/scape/">here</a> </p>
-                                <div class="slideshow-container">
-                                    <iframe
-                                            src="https://preesm.github.io/tutos/scape/"
-                                            width="800"
-                                            height="600"
-                                            style="border: 1px solid black;">
-                                        </iframe>
-                                </div>
-                            </td>
-                        </tr>
-                    </table>
-                </div>
-            </details>
-
-            <details>
-                <summary><h1>SimSDP: Multinode Design Space Exploration</h1></summary>
-                <p>
-                SimSDP is both Multinode & CPU Multicore resource allocation method first and a Topological network, Multinode & CPU Multicore co-design method whose implementation is integrated into PREESM.The methods have been developed to provide application performance analysis for the SKA radio telescope for deployment on HPC systems, but the method is applicable to any dataflow application.
-                </p>
-                <div class="table-container">
-                    <table class="research-partners">
-                        <tr>
-                            <td>
-                                <img src="video/scape.png" alt="scape" class="responsive-image">
-                                <p> Full tutorial <a href="https://preesm.github.io/tutos/simsdp/">here</a> </p>
-                                <div class="slideshow-container">
-                                    <iframe
-                                            src="https://preesm.github.io/tutos/simsdp/"
-                                            width="800"
-                                            height="600"
-                                            style="border: 1px solid black;">
-                                        </iframe>
-                                </div>
-                            </td>
-                        </tr>
-                    </table>
-                </div>
-            </details>
-
-            <details>
-                <summary><h1>CPU-GPU Design Space Exploration</h1></summary>
-                <p>
-                A resource allocation method for heterogeneous systems Multicore CPU accelerated by GPUs (CUDA) is implemented in PREESM to provide comprehensive rapid prototyping.
-                </p>
-                <div class="table-container">
-                    <table class="research-partners">
-                        <tr>
-                            <td>
-                                <img src="video/cpugpu.png" alt="cpugpu" class="responsive-image">
-                                 <p> Full tutorial <a href="https://preesm.github.io/tutos/gpu/">here</a> </p>
-                                <div class="slideshow-container">
-                                    <iframe
-                                        src="https://preesm.github.io/tutos/gpu/"
-                                        width="800"
-                                        height="600"
-                                        style="border: 1px solid black;">
-                                    </iframe>
-                                </div>
-                            </td>
-                        </tr>
-                    </table>
-                </div>
-            </details>
+            <!-- Autres sections de tutoriels -->
 
              <h2>Radio-interferometry imaging tutorial</h2>
                         <details>

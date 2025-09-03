@@ -30,12 +30,12 @@ p {
 }
 
 .poster-thumb {
-    width: 100px;       /* taille vignette */
+    width: 120px;        /* taille de la vignette */
     height: auto;
-    margin-right: 10px;
-    vertical-align: middle;
+    float: left;         /* fait "épouser" le paragraphe */
+    margin: 5px 15px 5px 0; /* marges autour pour aérer */
     border: 1px solid #ddd;
-    border-radius: 5px;
+    border-radius: 6px;
 }
 
  details {

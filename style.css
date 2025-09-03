@@ -29,6 +29,15 @@ p {
     padding: 20px;
 }
 
+.poster-thumb {
+    width: 100px;       /* taille vignette */
+    height: auto;
+    margin-right: 10px;
+    vertical-align: middle;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
  details {
             margin-bottom: 1.5rem;
             border: 1px solid #ddd;

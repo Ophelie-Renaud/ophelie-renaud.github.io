@@ -23,7 +23,7 @@ p {
 
 .container {
     width: 50%;
-    margin: auto;
+    margin: 40px auto;
     overflow: hidden;
     background: #fff;
     padding: 80px;

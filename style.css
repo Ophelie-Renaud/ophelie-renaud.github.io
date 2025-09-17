@@ -309,8 +309,8 @@ width: 100%; /* Utilise toute la largeur disponible */
     }
 
     .container {
-        width: 95%; /* Réduit la marge latérale pour utiliser plus d'espace */
-        padding: 5px;
+        width: 100%; /* Réduit la marge latérale pour utiliser plus d'espace */
+        padding: 1px;
     }
 
     .video-container {

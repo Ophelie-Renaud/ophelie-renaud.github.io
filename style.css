@@ -310,7 +310,7 @@ width: 100%; /* Utilise toute la largeur disponible */
 
     .container {
         width: 100%; /* Réduit la marge latérale pour utiliser plus d'espace */
-        padding: 1px;
+        padding: 5px;
     }
 
     .video-container {

@@ -1,62 +1,134 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Apps</title>
-    <link rel="icon" type="image/png" href="video/webb.png">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css">
-    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.js"></script>
-    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/contrib/auto-render.min.js"
-        onload="renderMathInElement(document.body);"></script>
-        <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            fetch('nav.html')
-                .then(response => response.text())
-                .then(data => {
-                    document.querySelector('nav').innerHTML = data;
-                });
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Applications</title>
+  <link rel="icon" type="image/png" href="video/webb.png">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/contrib/auto-render.min.js"
+          onload="renderMathInElement(document.body);"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      fetch('nav.html')
+        .then(response => response.text())
+        .then(data => {
+          document.querySelector('nav').innerHTML = data;
         });
-    </script>
+    });
+  </script>
+  <style>
+
+
+    .container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 2rem;
+      padding: 3rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .app-card {
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+      padding: 2rem;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .app-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+    }
+
+    .app-card h3 {
+      margin-top: 0;
+      font-size: 1.4rem;
+      color: #000000;
+    }
+
+    .app-card p {
+      line-height: 1.6;
+      font-size: 0.95rem;
+    }
+
+    .app-card ul {
+      margin: 0.5rem 0 1rem;
+      padding-left: 1.2rem;
+    }
+
+    .app-card img {
+      max-width: 100%;
+      border-radius: 10px;
+      margin: 1rem 0;
+      object-fit: contain;
+    }
+
+    .btn-link {
+      align-self: flex-start;
+      margin-top: auto;
+      padding: 0.6rem 1.2rem;
+      background: #3e4858;
+      color: white;
+      border-radius: 10px;
+      font-size: 0.9rem;
+      text-decoration: none;
+      transition: background 0.2s ease;
+    }
+
+    .btn-link:hover {
+      background: #217dbb;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h2>Apps</h2>
-    </header>
-    <nav>
+<header>
+  <h1>🛠️ Applications</h1>
+</header>
+<nav></nav>
 
-    </nav>
-    <div class="container">
-        <section class="content">
-                <h2>Radio-Frequency Interference (RFI) filter dataflow implementation</h2>
-                <p>The process involves filtering Radio Frequency Interference (RFI) from an acquisition file obtained by a radio telescope. 
-                    The file is in the ".dada" format (DADA stands for <strong>Distributed Acquisition and Data Analysis</strong>) and is comprised of two parts: the header, which contains information about the radio telescope, and the data part. 
-                    The data part consists of complex numbers. The first step of the process is to separate the real and imaginary components of the data to apply filters to both. Two filters are computed simultaneously, and one is applied to the data.</p>
-                <ul>
-                    <li>
-                        The first filter is the Standard Deviation (STD) filter. See <a href="https://en.wikipedia.org/wiki/Standard_deviation" target="_blank">Wiki STD deviation</a>.
-                        <p>\[ \sigma = \sqrt{\frac{1}{N} \sum\limits_{i=1}^N (x_i - \mu)} \]</p>
-                    </li>
-                    <li>
-                        The second filter is the Median Average Deviation (MAD) filter. See <a href="https://en.wikipedia.org/wiki/Median_absolute_deviation" target="_blank">Wiki MAD deviation</a>.
-                        <p>\[ {\displaystyle MAD = \mathrm{median} (|X_{i}-{\tilde {X}}|)} \]</p>
-                    </li>
-                </ul>
-                <p>Both filters aim to find a threshold and remove data points above this threshold. 
-                    Finally, the filtered real and imaginary parts are combined using their conjugates to reconstruct the complex numbers. These reconstructed complex numbers are then used to generate a new ".dada" file.</p>
-                                    <div class="table-container">
-                <table class="research-partners">
-                    <tr>
-            <td>
-                                <img src="video/RFIresult.png" alt="rfi" class="responsive-image">
-                                <p> Dataflow implementation <a href="https://github.com/preesm/preesm-apps/tree/master/org.ietr.preesm.rfi_filter">here</a> </p>
-            </td>
-        </tr>
-                </table>
-            </div>
-        </section>
-    </div>
+<main class="container">
+
+  <!-- RFI Filtering -->
+  <div class="app-card">
+    <h3>Radio-Frequency Interference (RFI) Filter</h3>
+    <p>
+      This application filters Radio Frequency Interference (RFI) from
+      <code>.dada</code> acquisition files recorded by radio telescopes.
+      The data are complex numbers, separated into real and imaginary
+      parts before applying two simultaneous filters:
+    </p>
+    <ul>
+      <li>Standard Deviation (STD): \(\sigma = \sqrt{\frac{1}{N}\sum_{i=1}^N(x_i - \mu)}\)</li>
+      <li>Median Absolute Deviation (MAD): \(MAD = \mathrm{median}(|X_i - \tilde{X}|)\)</li>
+    </ul>
+    <p>
+      The goal is to detect and remove outliers, reconstruct clean complex signals, and
+      export them into a new <code>.dada</code> file.
+    </p>
+    <img src="video/RFIresult.png" alt="RFI Filtering Result">
+    <a href="https://github.com/preesm/preesm-apps/tree/master/org.ietr.preesm.rfi_filter" target="_blank" class="btn-link">View on GitHub</a>
+  </div>
+
+  <!-- Radio Imaging (In Dev) -->
+  <div class="app-card">
+    <h3>Radio Imaging Pipeline <span style="color:#888;">(in development)</span></h3>
+    <p>
+      A second application is under active development to prototype
+      radio imaging pipelines for large-scale telescopes.  
+      
+    </p>
+    <img src="video/webb.png" alt="Radio Imaging (placeholder)">
+    <a href="https://github.com/Ophelie-Renaud/simsdp-generic-imaging-pipeline" class="btn-link disabled">Coming soon</a>
+  </div>
+
+</main>
 </body>
 </html>

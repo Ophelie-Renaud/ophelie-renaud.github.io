@@ -84,16 +84,7 @@ details p {
     line-height: 1.5;
     background-color: #f9f9f9; /* Fond clair */
 }
-        .video-container {
-            margin-top: 1rem;
-            text-align: center;
-        }
-        .video-container iframe, .video-container video {
-            width: 100%;
-            max-width: 100%;
-            border: none;
-            border-radius: 5px;
-        }
+
 
 header {
     background: #333;
@@ -165,36 +156,7 @@ nav ul li a {
     margin-bottom: 10px;
 }
 
-        .video-container {
-            position: relative;
-width: 100%; /* Utilise toute la largeur disponible */
-        padding-top: 56.25%; /* 16:9 Aspect Ratio */
-        overflow: hidden;
-           /* width: 640px;
-            height: 480px;*/
-        }
-        .video-container img {
-            position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-        }
-        .video-container video {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-          /*  object-fit: cover;*/
-        }
-.video-container iframe {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-    }
+        
 .responsive-image {
     width: 100%;
     height: auto;
@@ -274,11 +236,6 @@ width: 100%; /* Utilise toute la largeur disponible */
         font-size: 18px;
     }
 
-    .video-container {
-        width: 100%; /* Utilise toute la largeur de l'écran */
-        height: auto; /* Ajuste la hauteur pour conserver le ratio */
-    }
-
     .partner-image {
         width: 80px; /* Diminue la taille des images pour s’adapter aux petits écrans */
     }
@@ -311,11 +268,6 @@ width: 100%; /* Utilise toute la largeur disponible */
     .container {
         width: 100%; /* Réduit la marge latérale pour utiliser plus d'espace */
         padding: 5px;
-    }
-
-    .video-container {
-        width: 100%;
-        height: auto;
     }
 
     .research-partners td, .tuto td {

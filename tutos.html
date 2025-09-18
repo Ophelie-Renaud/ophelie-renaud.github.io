@@ -1,215 +1,175 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tutos</title>
-    <link rel="icon" type="image/png" href="video/webb.png">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap">
-    <link rel="stylesheet" href="style.css">
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            fetch('nav.html')
-                .then(response => response.text())
-                .then(data => {
-                    document.querySelector('nav').innerHTML = data;
-                });
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tutorials</title>
+  <link rel="icon" type="image/png" href="video/webb.png">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap">
+  <link rel="stylesheet" href="style.css">
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      fetch('nav.html')
+        .then(response => response.text())
+        .then(data => {
+          document.querySelector('nav').innerHTML = data;
         });
-    </script>
-            <style>
-        /* CSS pour l'effet de survol de l'image */
-        .photo-container {
-            display: inline-block;
-            overflow: hidden; /* Masque la partie de l'image qui dépasse */
-            position: relative;
-            width: 300px; /* Largeur fixée pour l'image */
-            height: 300px; /* Hauteur fixée pour l'image */
-        }
+    });
+  </script>
 
-        .photo-container img {
-            transition: transform 0.5s ease, box-shadow 0.3s ease;
-            width: 100%;
-            height: 100%;
-            object-fit: cover; /* Permet à l'image de remplir le conteneur tout en conservant son ratio */
-        }
+  <style>
 
-        .photo-container:hover img {
-            transform: scale(1.2); /* Zoom sur l'image */
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); /* Ombre portée */
 
-            .responsive-image {
-            width: 100%;  /* Assure que l'image prenne toute la largeur de son conteneur */
-            height: auto; /* Conserve les proportions de l'image */
-            object-fit: cover; /* Couvre tout l'espace disponible dans le conteneur */
-            transition: transform 0.5s ease, box-shadow 0.3s ease;
-        }
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 2rem auto;
+    }
 
-        .responsive-image:hover {
-            transform: scale(1.2); /* Zoom sur l'image */
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); /* Ombre portée */
-        }
-        }
-    </style>
+    h2 {
+      margin: 3rem 0 1.5rem;
+      font-size: 1.8rem;
+      color: #0f172a;
+    }
+
+    .cards {
+      display: grid;
+      gap: 2rem;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    }
+
+    .card {
+      background: white;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 28px rgba(0,0,0,0.15);
+    }
+
+    .card img {
+  display: block;
+  margin: 0 auto;
+  width: auto;                /* let width adapt */
+  max-width: 100%;            /* but never exceed card width */
+  height: auto;               /* preserve aspect ratio */
+  max-height: clamp(100px, 18vw, 180px); /* responsive max height */
+  object-fit: contain;        /* make sure the whole image is visible */
+  border-radius: 8px;
+  background: #f8fafc;        /* small background for letterboxed areas */
+}
+
+    .card-content {
+      padding: 1.5rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card-content h3 {
+      margin: 0;
+      font-size: 1.3rem;
+      color: #3e4858;
+    }
+
+    .card-content p {
+      margin: 0.8rem 0 1.2rem;
+      flex: 1;
+      font-size: 1rem;
+      line-height: 1.4;
+      color: #475569;
+    }
+
+    .card-content a {
+      display: inline-block;
+      background: #3e4858;
+      color: white;
+      padding: 0.6rem 1.2rem;
+      border-radius: 8px;
+      font-weight: bold;
+      text-align: center;
+      transition: background 0.3s ease;
+      text-decoration: none;
+    }
+
+    .card-content a:hover {
+      background: #3e4858;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h2>Tutorial</h2>
-    </header>
-    <nav>
-        <!-- Le contenu de nav.html sera chargé ici -->
-    </nav>
-    <div class="container">
-        <section class="content">
-            <h2>PREESM tutorial</h2>
-            <details>
-                <summary><h1>SCAPE: Granularity optimization</h1></summary>
-                <p>
-                SCAPE is a resource allocation optimization method based on dataflow clustering to automatically adjust the granularity of an application on Multicore CPU system.             
-                </p>
-                <div class="table-container">
-                    <table class="research-partners">
-                        <tr>
-                            <td>
-                                <img src="video/scape.png" alt="scape" class="responsive-image">
-                                <p> Full tutorial <a href="https://preesm.github.io/tutos/scape/">here</a> </p>
-                                <div class="slideshow-container">
-                                    <iframe 
-                                            src="https://preesm.github.io/tutos/scape/" 
-                                            width="800" 
-                                            height="600" 
-                                            style="border: 1px solid black;">
-                                        </iframe>            
-                                </div>
-                            </td>
-                        </tr>
-                    </table>
-                </div>
-            </details>
+  <header>
+    <h1>📘 Tutorials</h1>
+  </header>
 
-            <details>
-                <summary><h1>SimSDP: Multinode Design Space Exploration</h1></summary>
-                <p>
-                SimSDP is both Multinode & CPU Multicore resource allocation method first and a Topological network, Multinode & CPU Multicore co-design method whose implementation is integrated into PREESM.The methods have been developed to provide application performance analysis for the SKA radio telescope for deployment on HPC systems, but the method is applicable to any dataflow application. 
-                </p>
-                <div class="table-container">
-                    <table class="research-partners">
-                        <tr>
-                            <td>
-                                <img src="video/scape.png" alt="scape" class="responsive-image">
-                                <p> Full tutorial <a href="https://preesm.github.io/tutos/simsdp/">here</a> </p>
-                                <div class="slideshow-container">
-                                    <iframe 
-                                            src="https://preesm.github.io/tutos/simsdp/" 
-                                            width="800" 
-                                            height="600" 
-                                            style="border: 1px solid black;">
-                                        </iframe>            
-                                </div>
-                            </td>
-                        </tr>
-                    </table>
-                </div>
-            </details>
+  <nav>
+    <!-- nav.html -->
+  </nav>
 
-            <details>
-                <summary><h1>CPU-GPU Design Space Exploration</h1></summary>
-                <p>
-                A resource allocation method for heterogeneous systems Multicore CPU accelerated by GPUs (CUDA) is implemented in PREESM to provide comprehensive rapid prototyping.
-                </p>
-                <div class="table-container">
-                    <table class="research-partners">
-                        <tr>
-                            <td>
-                                <img src="video/cpugpu.png" alt="cpugpu" class="responsive-image">
-                                 <p> Full tutorial <a href="https://preesm.github.io/tutos/gpu/">here</a> </p>
-                                <div class="slideshow-container">
-                                    <iframe 
-                                        src="https://preesm.github.io/tutos/gpu/" 
-                                        width="800" 
-                                        height="600" 
-                                        style="border: 1px solid black;">
-                                    </iframe>            
-                                </div>
-                            </td>
-                        </tr>
-                    </table>
-                </div>
-            </details>
-            
-             <h2>Radio-interferometry imaging tutorial</h2>
-                        <details>
-                <summary><h1>DDFacet for beginner</h1></summary>
-                <p>
-                A Beta-Tested tutorial during the Labcom ECLAT hackathon! This provides you with all the tools and explanations to properly reconstruct a measurementSet or a distributed measurementSet with the DDFacet imaging pipeline.
-                </p>
-                <div class="table-container">
-                    <table class="research-partners">
-                        <tr>
-                            <td>
-                                
-                                 <p> Full tutorial <a href="https://hackmd.io/@orenaud/Bk1bzgnA1e">here</a> </p>
-                                <div class="slideshow-container">
-                                    <iframe 
-                                        src="https://hackmd.io/@orenaud/Bk1bzgnA1e" 
-                                        width="800" 
-                                        height="600" 
-                                        style="border: 1px solid black;">
-                                    </iframe>            
-                                </div>
-                            </td>
-                        </tr>
-                    </table>
-                </div>
-            </details>
-                                    <details>
-                <summary><h1>DFT/FFT/G2G tutorial for beginner</h1></summary>
-                <p>
-                Some known radio-interferometry imaging pipeline prototypes have been generated with the SimSDP tool (implemented within PREESM) and parameterized to facilitate configuration exploration. This facilitates imager reconstruction comparison from the NenuFAR scale to the SKAO scale.
-                </p>
-                <div class="table-container">
-                    <table class="research-partners">
-                        <tr>
-                            <td>
-                                
-                                 <p> Full tutorial <a href="https://hackmd.io/@orenaud/ByVGSSFell">here</a> </p>
-                                <div class="slideshow-container">
-                                    <iframe 
-                                        src="https://hackmd.io/@orenaud/ByVGSSFell" 
-                                        width="800" 
-                                        height="600" 
-                                        style="border: 1px solid black;">
-                                    </iframe>            
-                                </div>
-                            </td>
-                        </tr>
-                    </table>
-                </div>
-            </details>
-            <details>
-                <summary><h1>DALiuGE vs. SimSDP</h1></summary>
-                <p>
-                This gives the up-to-date keys to run DALiuGE, the ICRAR data-driven execution engine, to run one version of the SDP imaging pipeline. Comparison with SimSDP/PREESM is in progress!
-               </p>
-                <div class="table-container">
-                    <table class="research-partners">
-                        <tr>
-                            <td>
-                                
-                                 <p> Full tutorial <a href="https://hackmd.io/@orenaud/H1kdLyy7le">here</a> </p>
-                                <div class="slideshow-container">
-                                    <iframe 
-                                        src="https://hackmd.io/@orenaud/H1kdLyy7le" 
-                                        width="800" 
-                                        height="600" 
-                                        style="border: 1px solid black;">
-                                    </iframe>            
-                                </div>
-                            </td>
-                        </tr>
-                    </table>
-                </div>
-            </details>
-        </section>
+  <div class="container">
+    <h2>PREESM Tutorials</h2>
+    <div class="cards">
+      <div class="card">
+        <img src="video/scape.png" alt="SCAPE">
+        <div class="card-content">
+          <h3>SCAPE: Granularity optimization</h3>
+          <p>Clustering-based method to automatically optimize application granularity on multicore CPU systems.</p>
+          <a href="https://preesm.github.io/tutos/scape/" target="_blank">See tutorial</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="video/scape.png" alt="SimSDP">
+        <div class="card-content">
+          <h3>SimSDP: Multinode Design Space Exploration</h3>
+          <p>Resource allocation and co-design method for HPC deployment, developed for the SKA telescope.</p>
+          <a href="https://preesm.github.io/tutos/simsdp/" target="_blank">See tutorial</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="video/cpugpu.png" alt="CPU-GPU">
+        <div class="card-content">
+          <h3>CPU-GPU Design Space Exploration</h3>
+          <p>Rapid prototyping of heterogeneous systems with GPU acceleration integrated into PREESM.</p>
+          <a href="https://preesm.github.io/tutos/gpu/" target="_blank">See tutorial</a>
+        </div>
+      </div>
     </div>
+
+    <h2>Radio-interferometry Imaging Tutorials</h2>
+    <div class="cards">
+      <div class="card">
+        <div class="card-content">
+          <h3>DDFacet for Beginners</h3>
+          <p>Tutorial from the Labcom ECLAT hackathon to reconstruct distributed measurement sets using the DDFacet imaging pipeline.</p>
+          <a href="https://hackmd.io/@orenaud/Bk1bzgnA1e" target="_blank">See tutorial</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-content">
+          <h3>DFT/FFT/G2G</h3>
+          <p>Prototyped imaging pipelines generated with SimSDP for imager comparison from NenuFAR to SKAO.</p>
+          <a href="https://hackmd.io/@orenaud/ByVGSSFell" target="_blank">See tutorial</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-content">
+          <h3>DALiuGE vs. SimSDP</h3>
+          <p>Guide to run DALiuGE for the SDP imaging pipeline and comparison with SimSDP/PREESM methods.</p>
+          <a href="https://hackmd.io/@orenaud/H1kdLyy7le" target="_blank">See tutorial</a>
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
-</html>  
+</html>

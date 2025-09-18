@@ -1,84 +1,178 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Talk</title>
-    <link rel="icon" type="image/png" href="video/webb.png">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap">
-    <link rel="stylesheet" href="style.css">
-        <script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Talks & Presentations</title>
+<link rel="icon" type="image/png" href="video/webb.png">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+
+
+  .container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+  }
+
+  .card {
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  }
+
+  .card h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    padding: 15px 20px;
+    background: #f0f4ff;
+    color: #000000;
+  }
+
+  .card p {
+    padding: 10px 20px;
+    font-size: 0.95rem;
+    color: #3e4858;
+  }
+
+  .video-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%;
+  }
+
+  .video-container iframe,
+  .video-container video {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 0 0 15px 15px;
+  }
+
+  .btn-link {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 15px;
+    background: #3e4858;
+    color: #fff;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: background 0.3s;
+  }
+
+  .btn-link:hover {
+    background: #3e4858;
+  }
+</style>
+<script>
         document.addEventListener("DOMContentLoaded", function() {
             fetch('nav.html')
                 .then(response => response.text())
                 .then(data => {
                     document.querySelector('nav').innerHTML = data;
                 });
+document.querySelectorAll('.copy-bibtex').forEach(button => {
+                button.addEventListener('click', function() {
+                    const bibtex = this.previousElementSibling.textContent;
+                    navigator.clipboard.writeText(bibtex).then(() => {
+                        alert("BibTeX copié dans le presse-papier !");
+                    }).catch(err => {
+                        console.error('Erreur lors de la copie : ', err);
+                    });
+                });
+            });
+            
         });
     </script>
+
 </head>
 <body>
-    <header>
-        <h2>Talks & presentations</h2>
-    </header>
+<header>
+  <h1>🎤 Talks & Presentations</h1>
+</header>
     <nav>
-
+        
     </nav>
-    <div class="container">
-        <section class="content">
-            <details>
-                <summary><h2> Thesis defense </h2></summary>
-                <div class="video-container">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/mlmeiRxqgMA?si=bxsKNeFgCOS_YluA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                </div>
-            </details>
-            <details>
-                <summary><h2> Contest </h2></summary>
-                <li> 
-                    <p> 3MT contest, 32nd European Signal Processing Conference (EUSIPCO), 2024 </p> 
-                </li>
-                <div class="video-container">
-                    <video controls>
-                        <source src="video/3mt.mp4" type="video/mp4">
-                        Votre navigateur ne supporte pas la balise vidéo.
-                    </video>
-                </div>
-                <li> 
-                    <p>MT180 contest, France, 2024</p> 
-                </li>
-                <div class="video-container">
-                    <video controls>
-                        <source src="video/MT180 (2).mp4" type="video/mp4">
-                        Votre navigateur ne supporte pas la balise vidéo.
-                    </video>
-                </div>
-            </details>
-            
-            <details>
-            <summary><h2> International presentation </h2></summary>
-                <li> 
-                    <p> <a href="https://www.atnf.csiro.au/ATNF-DailyImage/archive/2024/24-Apr-2024.html"> Design and programming of heterogeneous and high-performance computing systems in astronomy</a>, ATNF, CSIRO colloquium, 2024</p> 
-                </li>
-                <div class="video-container">
-                    <iframe src="https://webcast.csiro.au/embed?id=d3b9ce37-dcb3-44e3-9e96-109f18030a75" allowfullscreen></iframe>
-                </div>
-                <li> 
-                    <p> <a href="https://www.atnf.csiro.au/ATNF-DailyImage/archive/2023/12-Jul-2023.html">Designing and Programming Astronomy Computing Systems for Optimal Power Efficiency and Performance</a>, ATNF, CSIRO colloquium, 2023 </p>
-                </li>
-                <div class="video-container">
-                        <iframe src="https://webcast.csiro.au/embed?id=2662af38-cf0c-4dcc-8a7a-99cce18c233b" frameborder="0" allowfullscreen></iframe>
-                </div>
-            </details>
-            <details>
-                <summary><h2> Registred seminar </h2></summary>
-                <li> 
-                    <p> <a href="https://hackmd.io/@kdesnos/SJWHYpzPG/https%3A%2F%2Fhackmd.io%2F%40kdesnos%2FH1oLjfZyyl?type=book">Automated Deployment of Radio Astronomy Pipeline on CPU-GPU Processing Systems: DiFX as a Case Study</a>, INSA, VAADER seminar, 2024 </p>
-                </li>
-                 <div class="video-container">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/TIyBr4q998Q?si=4SzB4QLJ-8ubknLB" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                </div>
-            </details>
-        </section>
+    
+
+<div class="container">
+<section class="content" style="text-align: center; margin-bottom: 40px;">
+    <p style="font-size: 1.2rem; font-weight: 500; color: #3e4858;">Let's talk about Science!</p>
+    <blockquote style="font-style: italic; color: #374151; margin-top: 15px; border-left: 4px solid #3e4858; padding-left: 15px;">
+        "We can only see a short distance ahead, but we can see plenty there that needs to be done." – Alan Turing
+    </blockquote>
+</section>
+
+    
+
+  <!-- Thesis Defense -->
+  <div class="card">
+    <h3>Thesis Defense</h3>
+    <div class="video-container">
+      <iframe src="https://www.youtube.com/embed/mlmeiRxqgMA?si=bxsKNeFgCOS_YluA" allowfullscreen></iframe>
     </div>
+  </div>
+
+  <!-- Contests -->
+  <div class="card">
+    <h3>3MT Contest</h3>
+    <p>32nd European Signal Processing Conference (EUSIPCO), 2024</p>
+    <div class="video-container">
+      <video controls>
+        <source src="video/3mt.mp4" type="video/mp4">
+      </video>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>MT180 Contest</h3>
+    <p>France, 2024</p>
+    <div class="video-container">
+      <video controls>
+        <source src="video/MT180 (2).mp4" type="video/mp4">
+      </video>
+    </div>
+  </div>
+
+  <!-- International Presentation -->
+  <div class="card">
+    <h3>ATNF Colloquium 2024</h3>
+    <p><a class="btn-link" href="https://www.atnf.csiro.au/ATNF-DailyImage/archive/2024/24-Apr-2024.html" target="_blank">Design and programming of heterogeneous and HPC systems in astronomy</a></p>
+    <div class="video-container">
+      <iframe src="https://webcast.csiro.au/embed?id=d3b9ce37-dcb3-44e3-9e96-109f18030a75" allowfullscreen></iframe>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>ATNF Colloquium 2023</h3>
+    <p><a class="btn-link" href="https://www.atnf.csiro.au/ATNF-DailyImage/archive/2023/12-Jul-2023.html" target="_blank">Designing and Programming Astronomy Computing Systems for Optimal Power Efficiency and Performance</a></p>
+    <div class="video-container">
+      <iframe src="https://webcast.csiro.au/embed?id=2662af38-cf0c-4dcc-8a7a-99cce18c233b" allowfullscreen></iframe>
+    </div>
+  </div>
+
+  <!-- Registered Seminar -->
+  <div class="card">
+    <h3>VAADER Seminar 2024</h3>
+    <p><a class="btn-link" href="https://hackmd.io/@kdesnos/SJWHYpzPG/https%3A%2F%2Fhackmd.io%2F%40kdesnos%2FH1oLjfZyyl?type=book" target="_blank">Automated Deployment of Radio Astronomy Pipeline on CPU-GPU Processing Systems: DiFX as a Case Study</a></p>
+    <div class="video-container">
+      <iframe src="https://www.youtube.com/embed/TIyBr4q998Q?si=4SzB4QLJ-8ubknLB" allowfullscreen></iframe>
+    </div>
+  </div>
+
+</div>
 </body>
-</html>   
+</html>

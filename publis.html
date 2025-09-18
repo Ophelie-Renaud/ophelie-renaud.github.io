@@ -135,6 +135,24 @@ document.querySelectorAll('.copy-bibtex').forEach(button => {
             
         });
     </script>
+    <script>
+document.addEventListener("DOMContentLoaded", function() {
+    document.querySelectorAll('.copy-bibtex').forEach(button => {
+        button.addEventListener('click', function() {
+            // on récupère le <pre> juste avant le bouton
+            const bibtex = this.closest('.publi-card').querySelector('.bibtex').textContent;
+            navigator.clipboard.writeText(bibtex)
+            .then(() => {
+                // Optionnel : changer le texte du bouton temporairement
+                const original = this.textContent;
+                this.textContent = "✅ Copié !";
+                setTimeout(() => this.textContent = original, 1500);
+            })
+            .catch(err => console.error('Erreur copie BibTeX:', err));
+        });
+    });
+});
+</script>
 </head>
 <body>
     <header>
@@ -152,13 +170,14 @@ document.querySelectorAll('.copy-bibtex').forEach(button => {
         <p><b>Ophélie Renaud</b>, 
         « Model Based Granularity Optimization for High Performance Computing Systems in Astronomy », Doctoral School MATISSE, 2024.</p>
         <div class="publi-buttons">
-          <button onclick="toggleBibtex(this)">📑 BibTeX</button>
           <a href="https://theses.hal.science/tel-04984281v1/file/TheseDEF_Ophelie_RENAUD.pdf" target="_blank"><button>📄 PDF</button></a>
         </div>
         <div class="contributions">
       <b>Contributions :</b> (1) methodology focusing on optimizing resource allocation at the granularity level of multi-core processor, (2) methodology for distributing resources among several HPC heterogeneous processor, (3) co-design methodology for HPC application.
     </div>
-
+<div class="publi-buttons">
+    <button class="copy-bibtex">📑 BibTeX</button>
+</div>
         <pre class="bibtex">@phdthesis{renaud:tel-04984281,
                     TITLE = {{Model Based Granularity Optimization for High-Performance Computing Systems in Astronomy}},
         AUTHOR = {Renaud, Oph{\'e}lie},
@@ -184,12 +203,14 @@ document.querySelectorAll('.copy-bibtex').forEach(button => {
         <p><b> Ophélie Renaud</b>, Adrien Gougeon, Karol Desnos, Chris Phillips, John Tuthill, Martin Quinson, and Jean-François Nezan, 
         « SimSDP: Dataflow Application Distribution on Heterogeneous Multi-Node & Multi-Core Architectures », under review.</p>
         <div class="publi-buttons">
-          <button onclick="toggleBibtex(this)">📑 BibTeX</button>
           <a href="https://hal.science/hal-04629332" target="_blank"><button>📄 PDF</button></a>
         </div>
         <div class="contributions">
       <b>Contributions :</b> (1) Deploy complex applications on a heterogeneous multi-node & multi-core CPU architecture, considering variations in the number of cores and core frequencies across nodes, (2) automatic adaptation of the granularity of the application description through model-based transformations enables fast DSE at both the multi-node & multi-core level, (3) leverage state-of-the-art tools for HPC systems simulation and heterogeneous multi-core CPU resource allocation.
     </div>
+    <div class="publi-buttons">
+    <button class="copy-bibtex">📑 BibTeX</button>
+</div>
         <pre class="bibtex">@article{RENAUD2024103217, ...}</pre>
       </div>
     </div>
@@ -199,7 +220,6 @@ document.querySelectorAll('.copy-bibtex').forEach(button => {
         <p><b>Ophélie Renaud</b>, Hugo Miomandre, Karol Desnos, and Jean-François Nezan, 
         « Automated Level-Based Clustering of Dataflow Actors for Controlled Scheduling Complexity », Journal of Systems Architecture (JSA), 2024.</p>
         <div class="publi-buttons">
-          <button onclick="toggleBibtex(this)">📑 BibTeX</button>
           <a href="https://hal.science/hal-04629332" target="_blank"><button>📄 PDF</button></a>
         </div>
 
@@ -207,6 +227,9 @@ document.querySelectorAll('.copy-bibtex').forEach(button => {
         <div class="contributions">
       <b>Contributions :</b> (1) Deploy complex application considering hierarchical description, computation internal state and target architecture constraints, (2) automatic adaptation of the granularity of an application description through model-based transformation enables fast DSE at the multicore level.
     </div>
+    <div class="publi-buttons">
+    <button class="copy-bibtex">📑 BibTeX</button>
+</div>
     
     <pre class="bibtex">@article{RENAUD2024103217,
         title = {Automated level-based clustering of dataflow actors for controlled scheduling complexity},
@@ -231,7 +254,7 @@ document.querySelectorAll('.copy-bibtex').forEach(button => {
         <p><b> Ophélie Renaud</b>, Nicolas Gac, François Orieux, and Cédric Viou, 
         « SimSDP, a Rapid Prototyping tool for Radio Astronomy: From NenuFAR Experiments to SKAO-Scale Simulation  », IEEE International Workshop on Signal Processing Systems (SiPS), 2025.</p>
         <div class="publi-buttons">
-          <button onclick="toggleBibtex(this)">📑 BibTeX</button>
+          
           <a href="https://hal.science/hal-05260888/file/2025323150.pdf" target="_blank"><button>📄 PDF</button></a>
         </div>
 
@@ -240,6 +263,11 @@ document.querySelectorAll('.copy-bibtex').forEach(button => {
     with joint or distributed deconvolution, (2) simulate pipeline behavior on multi-core multi-node CPU architectures for multi-scale data, (3) deploy parametric prototype pipelines using
     real-world data from the NenuFAR instrument.
     </div>
+
+    <div class="publi-buttons">
+    <button class="copy-bibtex">📑 BibTeX</button>
+</div>
+
         <pre class="bibtex">@inproceedings{renaud:hal-05260888,
         TITLE = {{SimSDP, a Rapid Prototyping tool for Radio Astronomy: From NenuFAR Experiments to SKAO-Scale Simulation}},
         AUTHOR = {Renaud, Oph{\'e}lie and Gac, Nicolas and Orieux, Fran{\c c}ois and Dumez-Viou, Cedric},
@@ -261,12 +289,14 @@ document.querySelectorAll('.copy-bibtex').forEach(button => {
         <p> Ewen Michel, <b> Ophélie Renaud</b>, Karol Desnos, Adam Deller, Chris Phillips, and Jean-François Nezan, 
         « Automated Deployment of Radio Astronomy Pipeline on CPU-GPU Processing Systems: DiFX as a Case Study », ADASS XXXIV, 2025.</p>
         <div class="publi-buttons">
-          <button onclick="toggleBibtex(this)">📑 BibTeX</button>
           <a href="https://hal.science/hal-04744986/document" target="_blank"><button>📄 PDF</button></a>
         </div>
         <div class="contributions">
       <b>Contributions :</b> (1) Deploy complex applications on a heterogeneous GPU-accelerated architecture, (2) automatic adaptation of the granularity of an application description through model-based transformation enables fast DSE at the multicore level.
     </div>
+    <div class="publi-buttons">
+    <button class="copy-bibtex">📑 BibTeX</button>
+</div>
         <pre class="bibtex">@inproceedings{michel:hal-04744986,
         TITLE = {{Automated Deployment of Radio Astronomy Pipeline on CPU-GPU Processing Systems: DiFX as a Case Study}},
         AUTHOR = {Michel, Ewen and Renaud, Oph{\'e}lie and Desnos, Karol and Deller, Adam T. and Phillips, Chris and Nezan, Jean-Fran{\c c}ois},
@@ -288,12 +318,14 @@ document.querySelectorAll('.copy-bibtex').forEach(button => {
         <b> Ophélie Renaud</b>, Erwan Raffin, Karol Desnos, and Jean-François Nezan, 
         « Multicore and Network Topology Codesign for Pareto-Optimal Multinode Architecture », European Signal Processing Conference (EUSIPCO), 2024.</p>
         <div class="publi-buttons">
-          <button onclick="toggleBibtex(this)">📑 BibTeX</button>
           <a href="https://hal.science/hal-04608249v1" target="_blank"><button>📄 PDF</button></a>
         </div>
         <div class="contributions">
       <b>Contributions :</b> (1) Automated co-design exploration identifying target architecture optimizing final latency for a given application, and evaluating crucial metrics such as final latency, energy consumption, memory usage, and associated cost.
     </div>
+    <div class="publi-buttons">
+    <button class="copy-bibtex">📑 BibTeX</button>
+</div>
         <pre class="bibtex">@@INPROCEEDINGS{10715023,
         author={Renaud, Ophélie and Desnos, Karol and Raffin, Erwan and Nezan, Jean-François},
         booktitle={2024 32nd European Signal Processing Conference (EUSIPCO)}, 
@@ -313,12 +345,14 @@ document.querySelectorAll('.copy-bibtex').forEach(button => {
         <b> Ophélie Renaud</b>, Naouel Haggui, Karol Desnos, and Jean-François Nezan, 
         « Automated Clustering and Pipelining of Dataflow Actors for Controlled Scheduling Complexity », European Signal Processing Conference (EUSIPCO), 2023.</p>
         <div class="publi-buttons">
-          <button onclick="toggleBibtex(this)">📑 BibTeX</button>
           <a href="https://hal.science/hal-04253298" target="_blank"><button>📄 PDF</button></a>
         </div>
         <div class="contributions">
       <b>Contributions :</b> (1) Deploy complex application considering computation internal state and target architecture constraints, (2) automatic adaptation of the granularity of an application description through model-based transformation enables fast DSE at the multicore level.
       </div>  
+      <div class="publi-buttons">
+    <button class="copy-bibtex">📑 BibTeX</button>
+</div>
       <pre class="bibtex">@INPROCEEDINGS{10290113,
         author={Renaud, Ophélie and Haggui, Naouel and Desnos, Karol and Nezan, Jean-François},
         booktitle={2023 31st European Signal Processing Conference (EUSIPCO)}, 
@@ -338,12 +372,14 @@ document.querySelectorAll('.copy-bibtex').forEach(button => {
         <b> Ophélie Renaud</b>, Dylan Gageot, Karol Desnos, and Jean-François Nezan, 
         « SCAPE: HW-Aware Clustering of Dataflow Actors for Tunable Scheduling Complexity », Design and Architecture for Signal and Image Processing (DASIP), 2023.</p>
         <div class="publi-buttons">
-          <button onclick="toggleBibtex(this)">📑 BibTeX</button>
           <a href="https://hal.science/hal-04089941" target="_blank"><button>📄 PDF</button></a>
         </div>
         <div class="contributions">
       <b>Contributions :</b> (1) Deploy complex application considering target architecture constraints, (2) automatic adaptation of the granularity of an application description through model-based transformation enables fast DSE at the multicore level.
       </div>  
+      <div class="publi-buttons">
+    <button class="copy-bibtex">📑 BibTeX</button>
+</div>
         <pre class="bibtex">@InProceedings{10.1007/978-3-031-29970-4_1,
         author="Renaud, Oph{\'e}lie
         and Gageot, Dylan
@@ -370,12 +406,14 @@ document.querySelectorAll('.copy-bibtex').forEach(button => {
         <b> Ophélie Renaud</b>, Sunrise Wang, Nicolas Gac and François Orieux,
         « Extension du prototypage rapide pour les pipelines d’imagerie radioastronomique : Simulation avancée multi-nœud HPC », Groupe de Recherche et d'Etudes de Traitement du Signal et des Images (GRETSI), 2025.</p>
         <div class="publi-buttons">
-          <button onclick="toggleBibtex(this)">📑 BibTeX</button>
           <a href="https://hal.science/hal-05216024/file/GRETSI__GIP_SIMSDP-2.pdf" target="_blank"><button>📄 PDF</button></a>
         </div>
         <div class="contributions">
       <b>Contributions :</b> (1) explorer davantage le parallélisme grâce à la modélisation du flux de données du parallélisme spectral, (2) simuler le comportement du pipeline sur des architectures CPU multicœurs et multinœuds, (3) améliorer la modélisation des performances et intégrer l'automatisation du processus d'estimation du temps de calcul.
         </div>
+        <div class="publi-buttons">
+    <button class="copy-bibtex">📑 BibTeX</button>
+</div>
       <pre class="bibtex">@inproceedings{renaud:hal-05216024,
         TITLE = {{Extension du prototypage rapide pour les pipelines d'imagerie radioastronomique : Simulation avanc{\'e}e multi-n{\oe}ud HPC}},
         AUTHOR = {Renaud, Oph{\'e}lie and Wang, Sunrise and Gac, Nicolas and Orieux, Fran{\c c}ois},
@@ -397,12 +435,18 @@ document.querySelectorAll('.copy-bibtex').forEach(button => {
         <b> Ophélie Renaud</b>,  Karol Desnos, and Jean-François Nezan,
         « SCAPE: Regroupement d’Acteurs flux de Données en Fonction de l’Architecture pour une Complexité d’Ordonnancement Contrôlée », Groupe de Recherche et d'Etudes de Traitement du Signal et des Images (GRETSI), 2023.</p>
         <div class="publi-buttons">
-          <button onclick="toggleBibtex(this)">📑 BibTeX</button>
           <a href="https://gretsi.fr/data/colloque/pdf/2023_renaud1168.pdf" target="_blank"><button>📄 PDF</button></a>
         </div>
         <div class="contributions">
       <b>Contributions :</b> (1) Déployer des applications complexes en tenant compte des contraintes de l'architecture cible, (2) l'adaptation automatique de la granularité d'une description d'application grâce à une transformation basée sur un modèle permet une DSE rapide au niveau multicœur.
-        title={SCAPE: HW-aware clustering of dataflow actors for tunable scheduling complexity},
+       </div>
+
+      <div class="publi-buttons">
+    <button class="copy-bibtex">📑 BibTeX</button>
+</div>
+      <pre class="bibtex">@inproceedings{renaud:hal-05216024,
+
+      title={SCAPE: HW-aware clustering of dataflow actors for tunable scheduling complexity},
         author={Renaud, Oph{\'e}lie and Gageot, Dylan and Desnos, Karol and Nezan, Jean-Fran{\c{c}}ois},
         booktitle={International Workshop on Design and Architecture for Signal and Image Processing},
         pages={3--14},

@@ -89,12 +89,18 @@ details p {
 header {
     background: #333;
     color: #fff;
-    padding: 10px 0;
+    padding: 0.8rem 1rem;
     text-align: center;
+    margin-bottom: 0;
 }
 
 header h1 {
     margin: 0;
+}
+nav {
+  background: #333;
+  padding: 0.3rem 0; /* réduire le padding vertical */
+  margin-top: 0; /* supprimer la marge par défaut */
 }
 
 nav ul {
@@ -106,14 +112,31 @@ nav ul {
 
 nav ul li {
     display: inline;
-    margin-right: 10px;
+    margin-right: 20px;
 }
 
 nav ul li a {
     color: #fff;
     text-decoration: none;
-    padding: 15px;
+    padding: 4px;
     font-size: 20px;
+}
+nav a {
+  display: inline-block;
+  background: #3e4858;
+  color: #fff;
+  padding: 0.4rem 0.8rem;
+  margin-right: 5px;
+  border-radius: 12px;
+  text-decoration: none;
+  transition: background 0.2s, transform 0.2s;
+}
+
+nav a:hover {
+  background: #217dbb;
+  transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+
 }
 
 .content {
@@ -290,4 +313,6 @@ nav ul li a {
     .partner-image {
         width: 60px; /* Encore plus petit pour les écrans les plus petits */
     }
+
+    
 }

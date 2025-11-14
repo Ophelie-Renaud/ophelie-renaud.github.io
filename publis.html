@@ -141,6 +141,25 @@
 .image-container:hover .pdf-preview {
   display: block;
 }
+ .iframe-wrapper {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* ratio 16:9 – modifiable */
+  height: 0;
+  overflow: hidden;
+  border-radius: 10px;
+  margin-top: 1rem;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+}
+
+.iframe-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}       
 @media (max-width: 450px) {
       .container {
         flex-direction: column;
@@ -259,8 +278,10 @@ document.addEventListener("DOMContentLoaded", function() {
         HAL_ID = {tel-04984281},
         HAL_VERSION = {v1},
         }</pre>
-<iframe src="https://1drv.ms/p/c/4ce3d2c0dfd9c98b/IQQnguV-uSCHSbg0Z51rUTxsAahb3PkA_4nG0vXYpNtcpoM" width="480" height="299" frameborder="0" scrolling="no"></iframe>
+          <div class="iframe-wrapper">
 
+<iframe src="https://1drv.ms/p/c/4ce3d2c0dfd9c98b/IQQnguV-uSCHSbg0Z51rUTxsAahb3PkA_4nG0vXYpNtcpoM" width="480" height="299" frameborder="0" scrolling="no"></iframe>
+          </div>
       </div>
     </div>
     <!-- Journaux -->

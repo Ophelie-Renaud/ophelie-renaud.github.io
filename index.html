@@ -139,10 +139,10 @@
     cursor: default;
   }
 
-  .keyword:hover {
+/*  .keyword:hover {
     background: #3e4858;
     color: #fff;
-  }
+  }*/
 
   /* Bouton CV */
   .btn-primary {
@@ -151,15 +151,19 @@
     font-size: 1rem;
     font-weight: 600;
     color: #fff;
-    background: linear-gradient(90deg, #09090a, #3e4858);
+    background: #3e4858;
+    /*background: linear-gradient(90deg, #09090a, #3e4858);*/
     border-radius: 8px;
     text-decoration: none;
     transition: transform 0.2s, box-shadow 0.2s;
   }
 
   .btn-primary:hover {
-    transform: translateY(-3px);
+
+    background: #217dbb;
+  transform: translateY(-3px);
     box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+
   }
 
     /* Section événements */
@@ -188,7 +192,7 @@
 }
 
 .event:hover {
-  transform: translateY(-3px);
+  transform: translateY(-1px);
 }
 
 .event-date {
@@ -286,10 +290,11 @@
     <div class="events-wrapper">
 
       <div class="event">
-        <div class="event-date">1-4 Nov 2025</div>
+        <div class="event-date">1-5 dec 2025</div>
         <div class="event-details">
-          <h3>SiPS Conference</h3>
-          <p>Hong-Kong – The 38th IEEE Workshop on Signal Processing Systems (SiPS)</p>
+          <h3>ECLAT Hackathon</h3>
+          <p>Meudon – The 4th hackathon building facilities for radio-interfermetry imaging pipelines
+          Check out <a href="https://eclat-lab.fr/" target="_blank">ECLAT</a>.</p>
         </div>
       </div>
 

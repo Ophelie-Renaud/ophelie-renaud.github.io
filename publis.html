@@ -141,7 +141,16 @@
 .image-container:hover .pdf-preview {
   display: block;
 }
+@media (max-width: 450px) {
+      .container {
+        flex-direction: column;
+        text-align: center;
+      }
+      .content {
+        flex: 1 1 100%;
+      }
 
+    }
   </style>
         <script>
         document.addEventListener("DOMContentLoaded", function() {

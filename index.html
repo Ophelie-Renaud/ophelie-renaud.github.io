@@ -98,19 +98,19 @@
 
     .partners-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 2rem;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 1.2rem;
       max-width: 900px;
-      margin: auto;
-      padding: 0 1rem 4rem;
+      margin: 2rem auto 4rem;
+      padding: 0 1rem;
     }
 
     .partner-card {
       background: white;
       border-radius: 12px;
-      padding: 1.5rem;
+      padding: 1rem;
       text-align: center;
-      box-shadow: 0 6px 14px rgba(0,0,0,0.08);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.08);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
     .partner-card:hover {
@@ -118,10 +118,10 @@
       box-shadow: 0 12px 24px rgba(0,0,0,0.15);
     }
     .partner-card img {
-      max-width: 120px;
-      max-height: 70px;
-      object-fit: contain;
-      margin-bottom: 0.5rem;
+      max-width: 90px;
+      max-height: 55px;
+      object-fit: block;
+      margin-bottom: auto;
     }
 
     /* Keywords grid */
@@ -225,7 +225,7 @@
       to {opacity: 1; transform: translateY(0);}
     }
 
-    @media (max-width: 768px) {
+    @media (max-width: 450px) {
       .container {
         flex-direction: column;
         text-align: center;
@@ -233,6 +233,10 @@
       .content {
         flex: 1 1 100%;
       }
+        .partners-grid {
+    grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+    gap: 0.8rem;
+  }
     }
   </style>
   <script>
@@ -360,7 +364,7 @@
     <div class="partner-card"></div>
   </div>
 
-    <h2>Postdoctoral Research Partners</h2>
+    <!--<h2>Postdoctoral Research Partners</h2>-->
     <div class="partners-grid">
     <div class="partner-card">
       <a href="https://satie.ens-paris-saclay.fr/fr" target="_blank">

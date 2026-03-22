@@ -24,48 +24,38 @@
     <meta name="twitter:site" content="@ophelie_renaud">
 <meta name="twitter:creator" content="@ophelie_renaud">
   <style>
-.timeline {
+.timeline-horizontal {
+  display: flex;
+  overflow-x: auto;
+  gap: 2rem;
+  padding: 2rem 1rem;
+  scroll-snap-type: x mandatory;
+}
+
+.timeline-step {
+  flex: 0 0 300px;
+  scroll-snap-align: start;
   position: relative;
-  margin: 2rem 0;
-  padding-left: 2rem;
-  border-left: 3px solid #4f46e5;
 }
 
-.timeline-item {
-  position: relative;
-  margin-bottom: 2rem;
-}
-
-.timeline-item::before {
-  content: '';
-  position: absolute;
-  left: -9px;
-  top: 0;
-  width: 16px;
-  height: 16px;
-  background-color: #4f46e5;
-  border-radius: 50%;
-  border: 3px solid white;
-  box-shadow: 0 0 0 2px #4f46e5;
-}
-
-.timeline-date {
+.step-year {
   font-weight: bold;
   color: #4f46e5;
-  margin-bottom: 0.3rem;
+  margin-bottom: 0.5rem;
+  text-align: center;
 }
 
-.timeline-content {
-  padding-left: 1rem;
+.step-card {
+  background: white;
+  padding: 1rem;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.badge {
-  background-color: #e0e7ff;
-  color: #3730a3;
-  padding: 0.2rem 0.6rem;
-  border-radius: 9999px;
-  font-size: 0.85rem;
-  margin-right: 0.3rem;
+.step-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.15);
 }
 
     
@@ -331,33 +321,28 @@
       </p>
     </section>
 
-<div class="timeline">
-  <div class="timeline-item">
-    <div class="timeline-date">2021</div>
-    <div class="timeline-content">
+<div class="timeline-horizontal">
+  <div class="timeline-step">
+    <div class="step-year">2021</div>
+    <div class="step-card">
       <h3>Start PhD</h3>
-      <p>Signal, Image, Vision at <a href="https://www.insa-rennes.fr/en.html">INSA Rennes</a> with <a href="https://www.ietr.fr/?lang=en">IETR</a>.</p>
+      <p>Signal, Image, Vision at INSA Rennes, IETR lab.</p>
       <span class="badge">ANR Dark Era</span>
-      <span class="badge">Rising Stars</span>
     </div>
   </div>
-
-  <div class="timeline-item">
-    <div class="timeline-date">2024</div>
-    <div class="timeline-content">
+  <div class="timeline-step">
+    <div class="step-year">2024</div>
+    <div class="step-card">
       <h3>PhD Completed</h3>
-      <p>Thesis concluded, funded by ANR Dark Era, with Rising Stars mobility support.</p>
+      <p>Thesis concluded, supported by Rising Stars.</p>
     </div>
   </div>
-
-  <div class="timeline-item">
-    <div class="timeline-date">2024–Mar 2026</div>
-    <div class="timeline-content">
+  <div class="timeline-step">
+    <div class="step-year">2024–Mar 2026</div>
+    <div class="step-card">
       <h3>Postdoctoral Research</h3>
-      <p>Continuing within ANR Dark Era across <a href="https://www.ens-rennes.fr/">ENS Rennes</a>, 
-      <a href="https://satie.ens-paris-saclay.fr/fr">SATIE, ENS Paris-Saclay</a> and <a href="https://www.irisa.fr/equipes/magellan">MAGELLAN, IRISA</a>.</p>
+      <p>ENS Rennes, SATIE Paris-Saclay, MAGELLAN IRISA</p>
       <span class="badge">LabCom ECLAT</span>
-      <p>Postdoc ends this month.</p>
     </div>
   </div>
 </div>

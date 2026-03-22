@@ -25,119 +25,93 @@
 <meta name="twitter:creator" content="@ophelie_renaud">
   <style>
     
-.timeline-horizontal {
+.timeline {
   position: relative;
-  display: flex;
-  flex-direction: column;
-  gap: 3rem;
   max-width: 900px;
   margin: 3rem auto;
-  padding-left: 120px;
+  padding-left: 40px;
 }
 
-/* Ligne verticale principale */
-.timeline-horizontal::before {
-  content: "";
+/* Ligne verticale */
+.timeline-line {
   position: absolute;
-  left: 100px;
+  left: 18px;
   top: 0;
   bottom: 0;
-  width: 3px;
-  background: #e5e7eb;
+  width: 4px;
+  background: linear-gradient(to bottom, #4f46e5, #3e4858);
 }
 
-/* Chaque étape */
-.timeline-step {
+/* Item */
+.timeline-item {
   position: relative;
+  margin-bottom: 3rem;
 }
 
-/* Point */
-.timeline-step::before {
-  content: "";
+/* Point sur la ligne */
+.timeline-dot {
   position: absolute;
-  left: -28px;
-  top: 8px;
+  left: -2px;
+  top: 5px;
   width: 14px;
   height: 14px;
   background: #4f46e5;
   border-radius: 50%;
-  box-shadow: 0 0 0 4px #eef2ff;
+  border: 3px solid white;
+  box-shadow: 0 0 0 3px rgba(79,70,229,0.2);
 }
 
-/* Date (élément clé visuel) */
-.step-year {
-  position: absolute;
-  left: -120px;
-  top: 0;
-  width: 100px;
-  text-align: right;
-  font-weight: 800;
-  font-size: 1.1rem;
+/* Contenu */
+.timeline-content {
+  margin-left: 30px;
+}
+
+/* Date */
+.timeline-date {
+  font-weight: bold;
   color: #4f46e5;
+  margin-bottom: 0.5rem;
 }
 
 /* Carte */
-.step-card {
+.timeline-card {
   background: white;
-  padding: 1.2rem 1.4rem;
-  border-radius: 16px;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  padding: 1.2rem;
+  border-radius: 14px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  transition: transform 0.25s ease;
 }
 
-.step-card:hover {
+.timeline-card:hover {
   transform: translateY(-3px);
-  box-shadow: 0 12px 30px rgba(0,0,0,0.12);
 }
 
-/* Titres */
-.step-card h3 {
-  margin-top: 0;
-  margin-bottom: 0.4rem;
-  font-size: 1.2rem;
-  color: #111827;
-}
-
-/* Texte */
-.step-card p {
-  margin: 0.3rem 0;
+/* Texte principal */
+.main-text {
   font-size: 0.95rem;
-  line-height: 1.4;
+  margin-top: 0.5rem;
+}
+
+/* Texte secondaire (plus petit comme tu veux) */
+.sub-text {
+  font-size: 0.8rem;
+  color: #666;
+  margin-top: 0.4rem;
 }
 
 /* Badges */
+.badges {
+  margin-top: 0.6rem;
+}
+
 .badge {
   display: inline-block;
   background: #eef2ff;
-  color: #4338ca;
+  color: #4f46e5;
   padding: 4px 10px;
-  border-radius: 999px;
+  border-radius: 10px;
   font-size: 0.75rem;
-  margin-top: 6px;
   margin-right: 5px;
-  font-weight: 500;
-}
-
-/* Responsive (super important) */
-@media (max-width: 700px) {
-  .timeline-horizontal {
-    padding-left: 20px;
-  }
-
-  .timeline-horizontal::before {
-    left: 10px;
-  }
-
-  .timeline-step::before {
-    left: -2px;
-  }
-
-  .step-year {
-    position: relative;
-    left: 0;
-    text-align: left;
-    margin-bottom: 5px;
-  }
 }
     
     .container {
@@ -408,29 +382,62 @@
     
     <h3>PhD Research Timeline </h3>
     
-<div class="timeline-horizontal">
-  <div class="timeline-step">
-    <div class="step-year">2021-2024</div>
-    <div class="step-card">
-      <h3>PhD Student</h3>
-      <p>Signal, Image, Vision at INSA Rennes, IETR lab.</p>
-      <p>Develop hardware-aware methodology for static resource allocation: granularity optimization for distributed (SimSDP) and shared memory architecture (SCAPE)</p>
-      <span class="badge">ANR Dark Era</span>
-       <p>Contribute and collaborate through the labCom ECLAT Initiative.</p>
-      <span class="badge">LabCom ECLAT</span>
+<div class="timeline">
+  
+  <div class="timeline-line"></div>
+
+  <div class="timeline-item">
+    <div class="timeline-dot"></div>
+
+    <div class="timeline-content">
+      <div class="timeline-date">2021 – 2024</div>
+      <div class="timeline-card">
+        <h3>PhD Student</h3>
+        <p>Signal, Image, Vision at INSA Rennes, IETR lab.</p>
+
+        <p class="main-text">
+          Develop hardware-aware methodology for static resource allocation: 
+          granularity optimization for distributed (SimSDP) and shared memory architecture (SCAPE)
+        </p>
+
+        <p class="sub-text">
+          Contribute and collaborate through the labCom ECLAT Initiative.
+        </p>
+
+        <div class="badges">
+          <span class="badge">ANR Dark Era</span>
+          <span class="badge">LabCom ECLAT</span>
+        </div>
+      </div>
     </div>
   </div>
-  <div class="timeline-step">
-    <div class="step-year">2024–Mar 2026</div>
-    <div class="step-card">
-      <h3>Postdoctoral Research</h3>
-      <p>ENS Rennes, SATIE Paris-Saclay, MAGELLAN IRISA</p>
-      <p>Develop methodology for sistematic  exploration of algorithmic, architectural, and distributed execution strategies for radio-interferometric imaging pipelines</p>
-      <span class="badge">ANR Dark Era</span>
-       <p>Contribute and collaborate through the labCom ECLAT Initiative.</p>
-      <span class="badge">LabCom ECLAT</span>
+
+  <div class="timeline-item">
+    <div class="timeline-dot"></div>
+
+    <div class="timeline-content">
+      <div class="timeline-date">2024 – Mar 2026</div>
+      <div class="timeline-card">
+        <h3>Postdoctoral Research</h3>
+        <p>ENS Rennes, SATIE Paris-Saclay, MAGELLAN IRISA</p>
+
+        <p class="main-text">
+          Develop methodology for systematic exploration of algorithmic, architectural, 
+          and distributed execution strategies for radio-interferometric imaging pipelines
+        </p>
+
+        <p class="sub-text">
+          Contribute and collaborate through the labCom ECLAT Initiative.
+        </p>
+
+        <div class="badges">
+          <span class="badge">ANR Dark Era</span>
+          <span class="badge">LabCom ECLAT</span>
+        </div>
+      </div>
     </div>
   </div>
+
 </div>
 
 

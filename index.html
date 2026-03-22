@@ -24,31 +24,46 @@
     <meta name="twitter:site" content="@ophelie_renaud">
 <meta name="twitter:creator" content="@ophelie_renaud">
   <style>
+    
 .timeline-horizontal {
+  position: relative;
   display: flex;
   overflow-x: auto;
-  gap: 2rem;
-  padding: 2rem 1rem;
+  gap: 3rem;
+  padding: 3rem 1rem;
   scroll-snap-type: x mandatory;
 }
-
+/* Ligne centrale */
+.timeline-horizontal::before {
+  content: "";
+  position: absolute;
+  top: 60px;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: #d1d5db;
+  z-index: 0;
+}
+/* Chaque étape */
 .timeline-step {
   flex: 0 0 300px;
   scroll-snap-align: start;
   position: relative;
+  text-align: center;
 }
-
+/* Année */
 .step-year {
   font-weight: bold;
   color: #4f46e5;
-  margin-bottom: 0.5rem;
-  text-align: center;
+  margin-bottom: 2rem;
 }
 
+/* Carte */
 .step-card {
   background: white;
   padding: 1rem;
   border-radius: 16px;
+  margin-top: 2rem;
   box-shadow: 0 8px 24px rgba(0,0,0,0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }

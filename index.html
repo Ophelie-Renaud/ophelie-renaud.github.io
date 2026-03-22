@@ -24,7 +24,51 @@
     <meta name="twitter:site" content="@ophelie_renaud">
 <meta name="twitter:creator" content="@ophelie_renaud">
   <style>
+.timeline {
+  position: relative;
+  margin: 2rem 0;
+  padding-left: 2rem;
+  border-left: 3px solid #4f46e5;
+}
 
+.timeline-item {
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -9px;
+  top: 0;
+  width: 16px;
+  height: 16px;
+  background-color: #4f46e5;
+  border-radius: 50%;
+  border: 3px solid white;
+  box-shadow: 0 0 0 2px #4f46e5;
+}
+
+.timeline-date {
+  font-weight: bold;
+  color: #4f46e5;
+  margin-bottom: 0.3rem;
+}
+
+.timeline-content {
+  padding-left: 1rem;
+}
+
+.badge {
+  background-color: #e0e7ff;
+  color: #3730a3;
+  padding: 0.2rem 0.6rem;
+  border-radius: 9999px;
+  font-size: 0.85rem;
+  margin-right: 0.3rem;
+}
+
+    
     .container {
       display: flex;
       flex-wrap: wrap;
@@ -287,7 +331,36 @@
       </p>
     </section>
 
+<div class="timeline">
+  <div class="timeline-item">
+    <div class="timeline-date">2021</div>
+    <div class="timeline-content">
+      <h3>Start PhD</h3>
+      <p>Signal, Image, Vision at <a href="https://www.insa-rennes.fr/en.html">INSA Rennes</a> with <a href="https://www.ietr.fr/?lang=en">IETR</a>.</p>
+      <span class="badge">ANR Dark Era</span>
+      <span class="badge">Rising Stars</span>
+    </div>
+  </div>
 
+  <div class="timeline-item">
+    <div class="timeline-date">2024</div>
+    <div class="timeline-content">
+      <h3>PhD Completed</h3>
+      <p>Thesis concluded, funded by ANR Dark Era, with Rising Stars mobility support.</p>
+    </div>
+  </div>
+
+  <div class="timeline-item">
+    <div class="timeline-date">2024–Mar 2026</div>
+    <div class="timeline-content">
+      <h3>Postdoctoral Research</h3>
+      <p>Continuing within ANR Dark Era across <a href="https://www.ens-rennes.fr/">ENS Rennes</a>, 
+      <a href="https://satie.ens-paris-saclay.fr/fr">SATIE, ENS Paris-Saclay</a> and <a href="https://www.irisa.fr/equipes/magellan">MAGELLAN, IRISA</a>.</p>
+      <span class="badge">LabCom ECLAT</span>
+      <p>Postdoc ends this month.</p>
+    </div>
+  </div>
+</div>
 
 
 <!-- Section partenaires -->

@@ -99,132 +99,52 @@
   margin-right: 5px;
 }
     
-    .container {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: center;
-      gap: 2.5rem;
-      padding: 4rem 1rem;
-      max-width: 1100px;
-      margin: auto;
-    }
-       /* .container {
-      max-width: 1100px;
+        .container {
+      max-width: 900px;
       margin: auto;
       padding: 2rem;
-    }*/
-
-    /* Photo profil */
-    .photo-container {
-      flex: 1 1 280px;
-      max-width: 300px;
-      border-radius: 50%;
-      overflow: hidden;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.15);
-      transition: transform 0.4s ease;
     }
-    .photo-container:hover {
-      transform: scale(1.05);
+    .card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 2rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      margin-bottom: 2rem;
+      text-align: center;
     }
-    .photo-container img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-
-    /* Texte présentation */
-    .content {
-      flex: 2 1 500px;
-      animation: fadeIn 1s ease;
-    }
-    .content h2 {
-      font-size: 2rem;
-      margin-bottom: 1rem;
+    .card h2 {
+      margin-top: 0;
       color: #000000;
     }
-    .content p {
-      margin-bottom: 1rem;
-      font-size: 1.05rem;
+    .card p {
+      font-size: 1rem;
+      margin: 1rem 0;
     }
-
-    /* Image responsive */
-    .responsive-image {
-      width: 100%;
-      max-width: 600px;
-      border-radius: 16px;
-      margin: 2rem 0;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.12);
-      transition: transform 0.4s ease;
+    .card a {
+      color: #3498db;
+      text-decoration: none;
+      font-weight: bold;
     }
-    .responsive-image:hover {
-      transform: scale(1.03);
+    .badge-container {
+      margin-top: 1rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      justify-content: center;
     }
-
-    /* Section partenaires */
-    h2.section-title {
-      text-align: center;
-      margin: 3rem 0 2rem;
-      font-size: 2rem;
-      color: #444;
+    .badge-container img {
+      height: 28px;
     }
-
-    .partners-grid {
-      display: grid;
-      grid-template-columns:  repeat(3, 1fr);
-      gap: 1rem;
-     /* max-width: 900px;
-      margin: 2rem auto 4rem;
-      padding: 0 1rem;*/
-      justify-items: center;
-      align-items: center;
+    blockquote.twitter-tweet {
+      margin: auto;
     }
-
-    .partner-card {
-      background: white;
-      border-radius: 12px;
-      padding: 1rem;
-      text-align: center;
-      box-shadow: 0 6px 12px rgba(0,0,0,0.08);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .partner-card:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 12px 24px rgba(0,0,0,0.15);
-    }
-    .partner-card img {
-      max-width: 90px;
-      max-height: 55px;
-      object-fit: block;
-      margin-bottom: 0;
-    }
-
-    /* Keywords grid */
-  .keywords-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    justify-content: center;
-    margin-top: 20px;
-  }
-
-  .keyword {
-    background: rgba(33,125,187,0.2);
-    color: #217dbb;
-    padding: 8px 15px;
-    border-radius: 20px;
-    font-size: 0.95rem;
-    font-weight: 500;
-    transition: background 0.2s, color 0.2s;
-    cursor: default;
-  }
-
-/*  .keyword:hover {
-    background: #3e4858;
-    color: #fff;
-  }*/
-
+    .profile-img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  margin: 1rem 0;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
   /* Bouton CV */
   .btn-primary {
     display: inline-block;

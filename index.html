@@ -309,6 +309,38 @@
   color: #000000;
   font-size: 0.95rem;
 }
+    .languages{
+    margin-top:40px;
+}
+
+.language{
+    margin:18px 0;
+}
+
+.language-header{
+    display:flex;
+    justify-content:space-between;
+    margin-bottom:6px;
+    font-weight:600;
+}
+
+.language-header span:last-child{
+    color:#666;
+    font-size:.9rem;
+}
+
+.language-bar{
+    height:8px;
+    background:#e9eef3;
+    border-radius:20px;
+    overflow:hidden;
+}
+
+.language-level{
+    height:100%;
+    background:linear-gradient(90deg,#217dbb,#4ea3df);
+    border-radius:20px;
+}
 
     /* Animations */
     @keyframes fadeIn {
@@ -620,6 +652,64 @@ at
       </a>
     </div>
   </div>
+</section>
+
+    <section class="languages">
+
+<h3>🌍 Languages</h3>
+
+<div class="language">
+
+    <div class="language-header">
+        <span>🇫🇷 French</span>
+        <span>Native</span>
+    </div>
+
+    <div class="language-bar">
+        <div class="language-level" style="width:100%"></div>
+    </div>
+
+</div>
+
+<div class="language">
+
+    <div class="language-header">
+        <span>🇬🇧 English</span>
+        <span>B2</span>
+    </div>
+
+    <div class="language-bar">
+        <div class="language-level" style="width:85%"></div>
+    </div>
+
+</div>
+
+<div class="language">
+
+    <div class="language-header">
+        <span>🇪🇸 Spanish</span>
+        <span>B1</span>
+    </div>
+
+    <div class="language-bar">
+        <div class="language-level" style="width:65%"></div>
+    </div>
+
+</div>
+
+<div class="language">
+
+    <div class="language-header">
+        <span>🇧🇷 Portuguese</span>
+        <span>B1</span>
+    </div>
+
+    <div class="language-bar">
+        <div class="language-level" style="width:45%"></div>
+    </div>
+
+</div>
+
 </section>
       
     </div>
